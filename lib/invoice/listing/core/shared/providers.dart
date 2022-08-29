@@ -12,7 +12,7 @@ final invoiceListingRepository = Provider(
 );
 
 final invoiceListingNotifierProvider =
-    StateNotifierProvider<InvoiceListingNotifier, BaseState<InvoiceListingEntity, dynamic>>(
+    StateNotifierProvider<InvoiceListingNotifier, BaseState<List<InvoiceListingEntity>, dynamic>>(
   (ref) => InvoiceListingNotifier(
     ref.read(invoiceListingRepository),
   ),

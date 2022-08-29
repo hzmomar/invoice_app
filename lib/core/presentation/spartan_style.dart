@@ -12,6 +12,16 @@ class SpartanStyle{
     fontSize: 20,
   );
 
+  static TextStyle size18W700 = defaultStyle.copyWith(
+    fontWeight: FontWeight.w700,
+    fontSize: 18,
+  );
+
+  static TextStyle size24W700 = defaultStyle.copyWith(
+    fontWeight: FontWeight.w700,
+    fontSize: 24,
+  );
+
   static TextStyle size12W700 = defaultStyle.copyWith(
     fontWeight: FontWeight.w700,
     fontSize: 12,

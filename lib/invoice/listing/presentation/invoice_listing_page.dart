@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:invoice_app/core/presentation/app_bar_widget.dart';
+import 'package:invoice_app/core/presentation/app_widget.dart';
 import 'package:invoice_app/core/presentation/padding.dart';
+import 'package:invoice_app/core/presentation/routes/app_router.gr.dart';
 import 'package:invoice_app/core/presentation/spartan_style.dart';
 import 'package:invoice_app/invoice/listing/core/shared/providers.dart';
 import 'package:invoice_app/invoice/listing/domain/invoice_listing.dart';
@@ -65,7 +67,11 @@ class _InvoiceListingPageState extends ConsumerState<InvoiceListingPage> {
                     MaterialButton(
                       color: const Color(0xFF7C5DFA),
                       padding: const EdgeInsets.all(6),
-                      onPressed: () {},
+                      onPressed: () {
+                        appRouter.push(
+                          InvoiceFormRoute(),
+                        );
+                      },
                       child: Row(
                         children: [
                           Padding(

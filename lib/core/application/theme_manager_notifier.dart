@@ -14,6 +14,10 @@ class ThemeManagerNotifier extends StateNotifier<ThemeMode> {
     }
   }
 
+  bool get isDarkMode => state == ThemeMode.dark;
+
+  bool get isLightMode => state == ThemeMode.light;
+
   ThemeData get darkTheme => ThemeData(
         fontFamily: 'Spartan',
         textSelectionTheme: const TextSelectionThemeData(

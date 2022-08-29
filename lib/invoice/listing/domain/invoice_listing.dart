@@ -17,11 +17,12 @@ class InvoiceListingEntity with _$InvoiceListingEntity {
     required InvoiceStatusEnum status,
     required String clientName,
     required String description,
-    required SenderAddress senderAddress,
-    required ClientAddress clientAddress,
     required String formattedPaymentDue,
     required String clientEmail,
     required List<InvoiceItem> items,
+    required int paymentTerm,
+    SenderAddress? senderAddress,
+    ClientAddress? clientAddress,
   }) = _InvoiceListingEntity;
 
 }

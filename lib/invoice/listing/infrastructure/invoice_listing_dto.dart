@@ -68,6 +68,28 @@ class InvoiceListingDTO with _$InvoiceListingDTO {
       clientEmail: clientEmail ?? '',
       formattedPaymentDue: paymentDue != null ? formatDate(paymentDue!) : '',
       items: items?.map((e) => e.toDomain()).toList() ?? [],
+      paymentTerm: paymentTerms ?? 1,
+    );
+  }
+
+  factory InvoiceListingDTO.fromListingDomain(InvoiceListingEntity data) {
+    return InvoiceListingDTO(
+      invoiceId: data.id,
+      createdAt: dbFormatDate(data.createdDateTime),
+      status: 'pending',
+      total: data.total,
+      items: data.items.map((e) => InvoiceItemsDTO.fromDomain(e)).toList(),
+      clientEmail: data.clientEmail,
+      description: data.description,
+      clientAddressDTO: data.clientAddress != null
+          ? InvoiceClientAddressDTO.fromDomain(data.clientAddress!)
+          : null,
+      clientName: data.clientName,
+      paymentDue: dbFormatDate(data.formattedPaymentDue),
+      paymentTerms: data.paymentTerm,
+      senderAddressDTO: data.senderAddress != null
+          ? InvoiceSenderAddressDTO.fromDomain(data.senderAddress!)
+          : null,
     );
   }
 }
@@ -94,6 +116,15 @@ class InvoiceSenderAddressDTO with _$InvoiceSenderAddressDTO {
       country: country ?? '',
     );
   }
+
+  factory InvoiceSenderAddressDTO.fromDomain(SenderAddress data) {
+    return InvoiceSenderAddressDTO(
+      street: data.street,
+      city: data.city,
+      country: data.country,
+      postCode: data.postCode,
+    );
+  }
 }
 
 @freezed
@@ -118,6 +149,15 @@ class InvoiceClientAddressDTO with _$InvoiceClientAddressDTO {
       country: country ?? '',
     );
   }
+
+  factory InvoiceClientAddressDTO.fromDomain(ClientAddress data) {
+    return InvoiceClientAddressDTO(
+      street: data.street,
+      city: data.city,
+      country: data.country,
+      postCode: data.postCode,
+    );
+  }
 }
 
 @freezed
@@ -140,6 +180,15 @@ class InvoiceItemsDTO with _$InvoiceItemsDTO {
       quantity: quantity ?? 0,
       price: price ?? 0.0,
       total: total ?? 0.0,
+    );
+  }
+
+  factory InvoiceItemsDTO.fromDomain(InvoiceItem data) {
+    return InvoiceItemsDTO(
+      name: data.name,
+      price: data.price,
+      quantity: data.quantity,
+      total: data.total,
     );
   }
 }

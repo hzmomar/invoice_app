@@ -7,21 +7,21 @@ class BaseState<T, S> with _$BaseState<T, S> {
   const BaseState._();
 
   const factory BaseState.initial(
-    List<T> data,
+    T data,
   ) = _Initial;
 
   const factory BaseState.loadInProgress(
-    List<T> data, {
+    T data, {
     int? itemsPerPage,
   }) = _LoadInProgress;
 
   const factory BaseState.loadSuccess(
-    List<T> data, {
+    T data, {
     @Default(false) bool isNextPageAvailable,
   }) = _LoadSuccess;
 
   const factory BaseState.loadFailure(
-    List<T> data,
+    T data,
     S failure,
   ) = _LoadFailure;
 }

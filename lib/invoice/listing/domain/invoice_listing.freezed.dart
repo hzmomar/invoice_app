@@ -22,11 +22,12 @@ mixin _$InvoiceListingEntity {
   InvoiceStatusEnum get status => throw _privateConstructorUsedError;
   String get clientName => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  SenderAddress get senderAddress => throw _privateConstructorUsedError;
-  ClientAddress get clientAddress => throw _privateConstructorUsedError;
   String get formattedPaymentDue => throw _privateConstructorUsedError;
   String get clientEmail => throw _privateConstructorUsedError;
   List<InvoiceItem> get items => throw _privateConstructorUsedError;
+  int get paymentTerm => throw _privateConstructorUsedError;
+  SenderAddress? get senderAddress => throw _privateConstructorUsedError;
+  ClientAddress? get clientAddress => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $InvoiceListingEntityCopyWith<InvoiceListingEntity> get copyWith =>
@@ -45,14 +46,15 @@ abstract class $InvoiceListingEntityCopyWith<$Res> {
       InvoiceStatusEnum status,
       String clientName,
       String description,
-      SenderAddress senderAddress,
-      ClientAddress clientAddress,
       String formattedPaymentDue,
       String clientEmail,
-      List<InvoiceItem> items});
+      List<InvoiceItem> items,
+      int paymentTerm,
+      SenderAddress? senderAddress,
+      ClientAddress? clientAddress});
 
-  $SenderAddressCopyWith<$Res> get senderAddress;
-  $ClientAddressCopyWith<$Res> get clientAddress;
+  $SenderAddressCopyWith<$Res>? get senderAddress;
+  $ClientAddressCopyWith<$Res>? get clientAddress;
 }
 
 /// @nodoc
@@ -72,11 +74,12 @@ class _$InvoiceListingEntityCopyWithImpl<$Res>
     Object? status = freezed,
     Object? clientName = freezed,
     Object? description = freezed,
-    Object? senderAddress = freezed,
-    Object? clientAddress = freezed,
     Object? formattedPaymentDue = freezed,
     Object? clientEmail = freezed,
     Object? items = freezed,
+    Object? paymentTerm = freezed,
+    Object? senderAddress = freezed,
+    Object? clientAddress = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -103,14 +106,6 @@ class _$InvoiceListingEntityCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      senderAddress: senderAddress == freezed
-          ? _value.senderAddress
-          : senderAddress // ignore: cast_nullable_to_non_nullable
-              as SenderAddress,
-      clientAddress: clientAddress == freezed
-          ? _value.clientAddress
-          : clientAddress // ignore: cast_nullable_to_non_nullable
-              as ClientAddress,
       formattedPaymentDue: formattedPaymentDue == freezed
           ? _value.formattedPaymentDue
           : formattedPaymentDue // ignore: cast_nullable_to_non_nullable
@@ -123,19 +118,39 @@ class _$InvoiceListingEntityCopyWithImpl<$Res>
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<InvoiceItem>,
+      paymentTerm: paymentTerm == freezed
+          ? _value.paymentTerm
+          : paymentTerm // ignore: cast_nullable_to_non_nullable
+              as int,
+      senderAddress: senderAddress == freezed
+          ? _value.senderAddress
+          : senderAddress // ignore: cast_nullable_to_non_nullable
+              as SenderAddress?,
+      clientAddress: clientAddress == freezed
+          ? _value.clientAddress
+          : clientAddress // ignore: cast_nullable_to_non_nullable
+              as ClientAddress?,
     ));
   }
 
   @override
-  $SenderAddressCopyWith<$Res> get senderAddress {
-    return $SenderAddressCopyWith<$Res>(_value.senderAddress, (value) {
+  $SenderAddressCopyWith<$Res>? get senderAddress {
+    if (_value.senderAddress == null) {
+      return null;
+    }
+
+    return $SenderAddressCopyWith<$Res>(_value.senderAddress!, (value) {
       return _then(_value.copyWith(senderAddress: value));
     });
   }
 
   @override
-  $ClientAddressCopyWith<$Res> get clientAddress {
-    return $ClientAddressCopyWith<$Res>(_value.clientAddress, (value) {
+  $ClientAddressCopyWith<$Res>? get clientAddress {
+    if (_value.clientAddress == null) {
+      return null;
+    }
+
+    return $ClientAddressCopyWith<$Res>(_value.clientAddress!, (value) {
       return _then(_value.copyWith(clientAddress: value));
     });
   }
@@ -155,16 +170,17 @@ abstract class _$$_InvoiceListingEntityCopyWith<$Res>
       InvoiceStatusEnum status,
       String clientName,
       String description,
-      SenderAddress senderAddress,
-      ClientAddress clientAddress,
       String formattedPaymentDue,
       String clientEmail,
-      List<InvoiceItem> items});
+      List<InvoiceItem> items,
+      int paymentTerm,
+      SenderAddress? senderAddress,
+      ClientAddress? clientAddress});
 
   @override
-  $SenderAddressCopyWith<$Res> get senderAddress;
+  $SenderAddressCopyWith<$Res>? get senderAddress;
   @override
-  $ClientAddressCopyWith<$Res> get clientAddress;
+  $ClientAddressCopyWith<$Res>? get clientAddress;
 }
 
 /// @nodoc
@@ -186,11 +202,12 @@ class __$$_InvoiceListingEntityCopyWithImpl<$Res>
     Object? status = freezed,
     Object? clientName = freezed,
     Object? description = freezed,
-    Object? senderAddress = freezed,
-    Object? clientAddress = freezed,
     Object? formattedPaymentDue = freezed,
     Object? clientEmail = freezed,
     Object? items = freezed,
+    Object? paymentTerm = freezed,
+    Object? senderAddress = freezed,
+    Object? clientAddress = freezed,
   }) {
     return _then(_$_InvoiceListingEntity(
       id: id == freezed
@@ -217,14 +234,6 @@ class __$$_InvoiceListingEntityCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      senderAddress: senderAddress == freezed
-          ? _value.senderAddress
-          : senderAddress // ignore: cast_nullable_to_non_nullable
-              as SenderAddress,
-      clientAddress: clientAddress == freezed
-          ? _value.clientAddress
-          : clientAddress // ignore: cast_nullable_to_non_nullable
-              as ClientAddress,
       formattedPaymentDue: formattedPaymentDue == freezed
           ? _value.formattedPaymentDue
           : formattedPaymentDue // ignore: cast_nullable_to_non_nullable
@@ -237,6 +246,18 @@ class __$$_InvoiceListingEntityCopyWithImpl<$Res>
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<InvoiceItem>,
+      paymentTerm: paymentTerm == freezed
+          ? _value.paymentTerm
+          : paymentTerm // ignore: cast_nullable_to_non_nullable
+              as int,
+      senderAddress: senderAddress == freezed
+          ? _value.senderAddress
+          : senderAddress // ignore: cast_nullable_to_non_nullable
+              as SenderAddress?,
+      clientAddress: clientAddress == freezed
+          ? _value.clientAddress
+          : clientAddress // ignore: cast_nullable_to_non_nullable
+              as ClientAddress?,
     ));
   }
 }
@@ -251,11 +272,12 @@ class _$_InvoiceListingEntity extends _InvoiceListingEntity {
       required this.status,
       required this.clientName,
       required this.description,
-      required this.senderAddress,
-      required this.clientAddress,
       required this.formattedPaymentDue,
       required this.clientEmail,
-      required final List<InvoiceItem> items})
+      required final List<InvoiceItem> items,
+      required this.paymentTerm,
+      this.senderAddress,
+      this.clientAddress})
       : _items = items,
         super._();
 
@@ -272,10 +294,6 @@ class _$_InvoiceListingEntity extends _InvoiceListingEntity {
   @override
   final String description;
   @override
-  final SenderAddress senderAddress;
-  @override
-  final ClientAddress clientAddress;
-  @override
   final String formattedPaymentDue;
   @override
   final String clientEmail;
@@ -287,8 +305,15 @@ class _$_InvoiceListingEntity extends _InvoiceListingEntity {
   }
 
   @override
+  final int paymentTerm;
+  @override
+  final SenderAddress? senderAddress;
+  @override
+  final ClientAddress? clientAddress;
+
+  @override
   String toString() {
-    return 'InvoiceListingEntity(id: $id, createdDateTime: $createdDateTime, total: $total, status: $status, clientName: $clientName, description: $description, senderAddress: $senderAddress, clientAddress: $clientAddress, formattedPaymentDue: $formattedPaymentDue, clientEmail: $clientEmail, items: $items)';
+    return 'InvoiceListingEntity(id: $id, createdDateTime: $createdDateTime, total: $total, status: $status, clientName: $clientName, description: $description, formattedPaymentDue: $formattedPaymentDue, clientEmail: $clientEmail, items: $items, paymentTerm: $paymentTerm, senderAddress: $senderAddress, clientAddress: $clientAddress)';
   }
 
   @override
@@ -306,14 +331,16 @@ class _$_InvoiceListingEntity extends _InvoiceListingEntity {
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
             const DeepCollectionEquality()
-                .equals(other.senderAddress, senderAddress) &&
-            const DeepCollectionEquality()
-                .equals(other.clientAddress, clientAddress) &&
-            const DeepCollectionEquality()
                 .equals(other.formattedPaymentDue, formattedPaymentDue) &&
             const DeepCollectionEquality()
                 .equals(other.clientEmail, clientEmail) &&
-            const DeepCollectionEquality().equals(other._items, _items));
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality()
+                .equals(other.paymentTerm, paymentTerm) &&
+            const DeepCollectionEquality()
+                .equals(other.senderAddress, senderAddress) &&
+            const DeepCollectionEquality()
+                .equals(other.clientAddress, clientAddress));
   }
 
   @override
@@ -325,11 +352,12 @@ class _$_InvoiceListingEntity extends _InvoiceListingEntity {
       const DeepCollectionEquality().hash(status),
       const DeepCollectionEquality().hash(clientName),
       const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(senderAddress),
-      const DeepCollectionEquality().hash(clientAddress),
       const DeepCollectionEquality().hash(formattedPaymentDue),
       const DeepCollectionEquality().hash(clientEmail),
-      const DeepCollectionEquality().hash(_items));
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(paymentTerm),
+      const DeepCollectionEquality().hash(senderAddress),
+      const DeepCollectionEquality().hash(clientAddress));
 
   @JsonKey(ignore: true)
   @override
@@ -346,11 +374,12 @@ abstract class _InvoiceListingEntity extends InvoiceListingEntity {
       required final InvoiceStatusEnum status,
       required final String clientName,
       required final String description,
-      required final SenderAddress senderAddress,
-      required final ClientAddress clientAddress,
       required final String formattedPaymentDue,
       required final String clientEmail,
-      required final List<InvoiceItem> items}) = _$_InvoiceListingEntity;
+      required final List<InvoiceItem> items,
+      required final int paymentTerm,
+      final SenderAddress? senderAddress,
+      final ClientAddress? clientAddress}) = _$_InvoiceListingEntity;
   const _InvoiceListingEntity._() : super._();
 
   @override
@@ -366,15 +395,17 @@ abstract class _InvoiceListingEntity extends InvoiceListingEntity {
   @override
   String get description;
   @override
-  SenderAddress get senderAddress;
-  @override
-  ClientAddress get clientAddress;
-  @override
   String get formattedPaymentDue;
   @override
   String get clientEmail;
   @override
   List<InvoiceItem> get items;
+  @override
+  int get paymentTerm;
+  @override
+  SenderAddress? get senderAddress;
+  @override
+  ClientAddress? get clientAddress;
   @override
   @JsonKey(ignore: true)
   _$$_InvoiceListingEntityCopyWith<_$_InvoiceListingEntity> get copyWith =>

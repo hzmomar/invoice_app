@@ -6,3 +6,8 @@ String formatDate(String dateTime) {
   final DateTime formatDateTime = dateFormat.parse(dateTime);
   return formattedDate.format(formatDateTime);
 }
+
+String dbFormatDate(String dateTime) {
+  final DateFormat dateFormat = DateFormat('yyyy-MM-d');
+  return dateFormat.format(DateTime.parse(dateTime));
+}

@@ -6,8 +6,8 @@ import 'package:invoice_app/core/presentation/color_theme.dart';
 import 'package:invoice_app/core/presentation/padding.dart';
 import 'package:invoice_app/core/presentation/spartan_style.dart';
 import 'package:invoice_app/invoice/core/domain/invoice_status_enum.dart';
+import 'package:invoice_app/invoice/core/presentation/back_button_widget.dart';
 import 'package:invoice_app/invoice/listing/core/shared/providers.dart';
-
 import 'package:invoice_app/invoice/listing/domain/invoice_listing.dart';
 import 'package:invoice_app/invoice/listing/presentation/status_widget.dart';
 
@@ -32,33 +32,7 @@ class InvoiceDetailsPage extends ConsumerWidget {
           child: Column(
             children: [
               /// go back button
-              BottomPadding(
-                padding: 16,
-                child: InkWell(
-                  onTap: () {
-                    appRouter.pop();
-                  },
-                  child: Row(
-                    children: [
-                      /// arrow
-                      const Padding(
-                        padding: EdgeInsets.only(right: 8),
-                        child: Icon(
-                          Icons.arrow_back_ios,
-                          size: 12,
-                          color: Color(0xFF7C5DFA),
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          'Go Back',
-                          style: SpartanStyle.size12W700,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              const BackButtonWidget(),
 
               /// status
               BottomPadding(
@@ -66,7 +40,9 @@ class InvoiceDetailsPage extends ConsumerWidget {
                 child: Card(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 32, vertical: 24),
+                      horizontal: 32,
+                      vertical: 24,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -118,7 +94,7 @@ class InvoiceDetailsPage extends ConsumerWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              '${invoiceListingEntity.senderAddress.street} \n ${invoiceListingEntity.senderAddress.city} \n ${invoiceListingEntity.senderAddress.postCode} \n ${invoiceListingEntity.senderAddress.country}',
+                              '${invoiceListingEntity.senderAddress?.street} \n ${invoiceListingEntity.senderAddress?.city} \n ${invoiceListingEntity.senderAddress?.postCode} \n ${invoiceListingEntity.senderAddress?.country}',
                               style: SpartanStyle.size11W500.copyWith(
                                 color: titleTextColor,
                               ),
@@ -213,7 +189,7 @@ class InvoiceDetailsPage extends ConsumerWidget {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        '${invoiceListingEntity.clientAddress.street} \n ${invoiceListingEntity.clientAddress.city} \n ${invoiceListingEntity.clientAddress.postCode} \n ${invoiceListingEntity.clientAddress.country}',
+                                        '${invoiceListingEntity.clientAddress?.street} \n ${invoiceListingEntity.clientAddress?.city} \n ${invoiceListingEntity.clientAddress?.postCode} \n ${invoiceListingEntity.clientAddress?.country}',
                                         style: SpartanStyle.size11W500.copyWith(
                                           color: titleTextColor,
                                         ),
@@ -346,7 +322,7 @@ class InvoiceDetailsPage extends ConsumerWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(24),
         color: ref.watch(themeManagerNotifierProvider) == ThemeMode.light
             ? const Color(0xFFFFFFFF)
             : const Color(0xFF1E2139),

@@ -1,6 +1,7 @@
 
 import 'package:auto_route/auto_route.dart';
 import 'package:invoice_app/invoice/details/presentation/invoice_details_page.dart';
+import 'package:invoice_app/invoice/editing/presentation/invoice_form_page.dart';
 import 'package:invoice_app/invoice/listing/presentation/invoice_listing_page.dart';
 import 'package:invoice_app/splash/presentation/splash_page.dart';
 
@@ -9,6 +10,7 @@ import 'package:invoice_app/splash/presentation/splash_page.dart';
     MaterialRoute(page: SplashPage, initial: true),
     MaterialRoute(page: InvoiceListingPage),
     MaterialRoute(page: InvoiceDetailsPage),
+    MaterialRoute(page: InvoiceFormPage),
   ],
   replaceInRouteName: 'Page,Route',
 )

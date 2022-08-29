@@ -16,30 +16,29 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BaseState<T, S> {
-  List<T> get data => throw _privateConstructorUsedError;
+  T get data => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<T> data) initial,
-    required TResult Function(List<T> data, int? itemsPerPage) loadInProgress,
-    required TResult Function(List<T> data, bool isNextPageAvailable)
-        loadSuccess,
-    required TResult Function(List<T> data, S failure) loadFailure,
+    required TResult Function(T data) initial,
+    required TResult Function(T data, int? itemsPerPage) loadInProgress,
+    required TResult Function(T data, bool isNextPageAvailable) loadSuccess,
+    required TResult Function(T data, S failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<T> data)? initial,
-    TResult Function(List<T> data, int? itemsPerPage)? loadInProgress,
-    TResult Function(List<T> data, bool isNextPageAvailable)? loadSuccess,
-    TResult Function(List<T> data, S failure)? loadFailure,
+    TResult Function(T data)? initial,
+    TResult Function(T data, int? itemsPerPage)? loadInProgress,
+    TResult Function(T data, bool isNextPageAvailable)? loadSuccess,
+    TResult Function(T data, S failure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<T> data)? initial,
-    TResult Function(List<T> data, int? itemsPerPage)? loadInProgress,
-    TResult Function(List<T> data, bool isNextPageAvailable)? loadSuccess,
-    TResult Function(List<T> data, S failure)? loadFailure,
+    TResult Function(T data)? initial,
+    TResult Function(T data, int? itemsPerPage)? loadInProgress,
+    TResult Function(T data, bool isNextPageAvailable)? loadSuccess,
+    TResult Function(T data, S failure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -79,7 +78,7 @@ abstract class $BaseStateCopyWith<T, S, $Res> {
   factory $BaseStateCopyWith(
           BaseState<T, S> value, $Res Function(BaseState<T, S>) then) =
       _$BaseStateCopyWithImpl<T, S, $Res>;
-  $Res call({List<T> data});
+  $Res call({T data});
 }
 
 /// @nodoc
@@ -99,7 +98,7 @@ class _$BaseStateCopyWithImpl<T, S, $Res>
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<T>,
+              as T,
     ));
   }
 }
@@ -111,7 +110,7 @@ abstract class _$$_InitialCopyWith<T, S, $Res>
           _$_Initial<T, S> value, $Res Function(_$_Initial<T, S>) then) =
       __$$_InitialCopyWithImpl<T, S, $Res>;
   @override
-  $Res call({List<T> data});
+  $Res call({T data});
 }
 
 /// @nodoc
@@ -131,9 +130,9 @@ class __$$_InitialCopyWithImpl<T, S, $Res>
   }) {
     return _then(_$_Initial<T, S>(
       data == freezed
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<T>,
+              as T,
     ));
   }
 }
@@ -141,16 +140,10 @@ class __$$_InitialCopyWithImpl<T, S, $Res>
 /// @nodoc
 
 class _$_Initial<T, S> extends _Initial<T, S> {
-  const _$_Initial(final List<T> data)
-      : _data = data,
-        super._();
+  const _$_Initial(this.data) : super._();
 
-  final List<T> _data;
   @override
-  List<T> get data {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+  final T data;
 
   @override
   String toString() {
@@ -162,12 +155,12 @@ class _$_Initial<T, S> extends _Initial<T, S> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initial<T, S> &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
@@ -177,11 +170,10 @@ class _$_Initial<T, S> extends _Initial<T, S> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<T> data) initial,
-    required TResult Function(List<T> data, int? itemsPerPage) loadInProgress,
-    required TResult Function(List<T> data, bool isNextPageAvailable)
-        loadSuccess,
-    required TResult Function(List<T> data, S failure) loadFailure,
+    required TResult Function(T data) initial,
+    required TResult Function(T data, int? itemsPerPage) loadInProgress,
+    required TResult Function(T data, bool isNextPageAvailable) loadSuccess,
+    required TResult Function(T data, S failure) loadFailure,
   }) {
     return initial(data);
   }
@@ -189,10 +181,10 @@ class _$_Initial<T, S> extends _Initial<T, S> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<T> data)? initial,
-    TResult Function(List<T> data, int? itemsPerPage)? loadInProgress,
-    TResult Function(List<T> data, bool isNextPageAvailable)? loadSuccess,
-    TResult Function(List<T> data, S failure)? loadFailure,
+    TResult Function(T data)? initial,
+    TResult Function(T data, int? itemsPerPage)? loadInProgress,
+    TResult Function(T data, bool isNextPageAvailable)? loadSuccess,
+    TResult Function(T data, S failure)? loadFailure,
   }) {
     return initial?.call(data);
   }
@@ -200,10 +192,10 @@ class _$_Initial<T, S> extends _Initial<T, S> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<T> data)? initial,
-    TResult Function(List<T> data, int? itemsPerPage)? loadInProgress,
-    TResult Function(List<T> data, bool isNextPageAvailable)? loadSuccess,
-    TResult Function(List<T> data, S failure)? loadFailure,
+    TResult Function(T data)? initial,
+    TResult Function(T data, int? itemsPerPage)? loadInProgress,
+    TResult Function(T data, bool isNextPageAvailable)? loadSuccess,
+    TResult Function(T data, S failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -251,11 +243,11 @@ class _$_Initial<T, S> extends _Initial<T, S> {
 }
 
 abstract class _Initial<T, S> extends BaseState<T, S> {
-  const factory _Initial(final List<T> data) = _$_Initial<T, S>;
+  const factory _Initial(final T data) = _$_Initial<T, S>;
   const _Initial._() : super._();
 
   @override
-  List<T> get data;
+  T get data;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<T, S, _$_Initial<T, S>> get copyWith =>
@@ -269,7 +261,7 @@ abstract class _$$_LoadInProgressCopyWith<T, S, $Res>
           $Res Function(_$_LoadInProgress<T, S>) then) =
       __$$_LoadInProgressCopyWithImpl<T, S, $Res>;
   @override
-  $Res call({List<T> data, int? itemsPerPage});
+  $Res call({T data, int? itemsPerPage});
 }
 
 /// @nodoc
@@ -290,9 +282,9 @@ class __$$_LoadInProgressCopyWithImpl<T, S, $Res>
   }) {
     return _then(_$_LoadInProgress<T, S>(
       data == freezed
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<T>,
+              as T,
       itemsPerPage: itemsPerPage == freezed
           ? _value.itemsPerPage
           : itemsPerPage // ignore: cast_nullable_to_non_nullable
@@ -304,17 +296,10 @@ class __$$_LoadInProgressCopyWithImpl<T, S, $Res>
 /// @nodoc
 
 class _$_LoadInProgress<T, S> extends _LoadInProgress<T, S> {
-  const _$_LoadInProgress(final List<T> data, {this.itemsPerPage})
-      : _data = data,
-        super._();
+  const _$_LoadInProgress(this.data, {this.itemsPerPage}) : super._();
 
-  final List<T> _data;
   @override
-  List<T> get data {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
-
+  final T data;
   @override
   final int? itemsPerPage;
 
@@ -328,7 +313,7 @@ class _$_LoadInProgress<T, S> extends _LoadInProgress<T, S> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoadInProgress<T, S> &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality()
                 .equals(other.itemsPerPage, itemsPerPage));
   }
@@ -336,7 +321,7 @@ class _$_LoadInProgress<T, S> extends _LoadInProgress<T, S> {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_data),
+      const DeepCollectionEquality().hash(data),
       const DeepCollectionEquality().hash(itemsPerPage));
 
   @JsonKey(ignore: true)
@@ -348,11 +333,10 @@ class _$_LoadInProgress<T, S> extends _LoadInProgress<T, S> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<T> data) initial,
-    required TResult Function(List<T> data, int? itemsPerPage) loadInProgress,
-    required TResult Function(List<T> data, bool isNextPageAvailable)
-        loadSuccess,
-    required TResult Function(List<T> data, S failure) loadFailure,
+    required TResult Function(T data) initial,
+    required TResult Function(T data, int? itemsPerPage) loadInProgress,
+    required TResult Function(T data, bool isNextPageAvailable) loadSuccess,
+    required TResult Function(T data, S failure) loadFailure,
   }) {
     return loadInProgress(data, itemsPerPage);
   }
@@ -360,10 +344,10 @@ class _$_LoadInProgress<T, S> extends _LoadInProgress<T, S> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<T> data)? initial,
-    TResult Function(List<T> data, int? itemsPerPage)? loadInProgress,
-    TResult Function(List<T> data, bool isNextPageAvailable)? loadSuccess,
-    TResult Function(List<T> data, S failure)? loadFailure,
+    TResult Function(T data)? initial,
+    TResult Function(T data, int? itemsPerPage)? loadInProgress,
+    TResult Function(T data, bool isNextPageAvailable)? loadSuccess,
+    TResult Function(T data, S failure)? loadFailure,
   }) {
     return loadInProgress?.call(data, itemsPerPage);
   }
@@ -371,10 +355,10 @@ class _$_LoadInProgress<T, S> extends _LoadInProgress<T, S> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<T> data)? initial,
-    TResult Function(List<T> data, int? itemsPerPage)? loadInProgress,
-    TResult Function(List<T> data, bool isNextPageAvailable)? loadSuccess,
-    TResult Function(List<T> data, S failure)? loadFailure,
+    TResult Function(T data)? initial,
+    TResult Function(T data, int? itemsPerPage)? loadInProgress,
+    TResult Function(T data, bool isNextPageAvailable)? loadSuccess,
+    TResult Function(T data, S failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -422,12 +406,12 @@ class _$_LoadInProgress<T, S> extends _LoadInProgress<T, S> {
 }
 
 abstract class _LoadInProgress<T, S> extends BaseState<T, S> {
-  const factory _LoadInProgress(final List<T> data, {final int? itemsPerPage}) =
+  const factory _LoadInProgress(final T data, {final int? itemsPerPage}) =
       _$_LoadInProgress<T, S>;
   const _LoadInProgress._() : super._();
 
   @override
-  List<T> get data;
+  T get data;
   int? get itemsPerPage;
   @override
   @JsonKey(ignore: true)
@@ -442,7 +426,7 @@ abstract class _$$_LoadSuccessCopyWith<T, S, $Res>
           $Res Function(_$_LoadSuccess<T, S>) then) =
       __$$_LoadSuccessCopyWithImpl<T, S, $Res>;
   @override
-  $Res call({List<T> data, bool isNextPageAvailable});
+  $Res call({T data, bool isNextPageAvailable});
 }
 
 /// @nodoc
@@ -463,9 +447,9 @@ class __$$_LoadSuccessCopyWithImpl<T, S, $Res>
   }) {
     return _then(_$_LoadSuccess<T, S>(
       data == freezed
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<T>,
+              as T,
       isNextPageAvailable: isNextPageAvailable == freezed
           ? _value.isNextPageAvailable
           : isNextPageAvailable // ignore: cast_nullable_to_non_nullable
@@ -477,17 +461,11 @@ class __$$_LoadSuccessCopyWithImpl<T, S, $Res>
 /// @nodoc
 
 class _$_LoadSuccess<T, S> extends _LoadSuccess<T, S> {
-  const _$_LoadSuccess(final List<T> data, {this.isNextPageAvailable = false})
-      : _data = data,
-        super._();
+  const _$_LoadSuccess(this.data, {this.isNextPageAvailable = false})
+      : super._();
 
-  final List<T> _data;
   @override
-  List<T> get data {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
-
+  final T data;
   @override
   @JsonKey()
   final bool isNextPageAvailable;
@@ -502,7 +480,7 @@ class _$_LoadSuccess<T, S> extends _LoadSuccess<T, S> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoadSuccess<T, S> &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality()
                 .equals(other.isNextPageAvailable, isNextPageAvailable));
   }
@@ -510,7 +488,7 @@ class _$_LoadSuccess<T, S> extends _LoadSuccess<T, S> {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_data),
+      const DeepCollectionEquality().hash(data),
       const DeepCollectionEquality().hash(isNextPageAvailable));
 
   @JsonKey(ignore: true)
@@ -522,11 +500,10 @@ class _$_LoadSuccess<T, S> extends _LoadSuccess<T, S> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<T> data) initial,
-    required TResult Function(List<T> data, int? itemsPerPage) loadInProgress,
-    required TResult Function(List<T> data, bool isNextPageAvailable)
-        loadSuccess,
-    required TResult Function(List<T> data, S failure) loadFailure,
+    required TResult Function(T data) initial,
+    required TResult Function(T data, int? itemsPerPage) loadInProgress,
+    required TResult Function(T data, bool isNextPageAvailable) loadSuccess,
+    required TResult Function(T data, S failure) loadFailure,
   }) {
     return loadSuccess(data, isNextPageAvailable);
   }
@@ -534,10 +511,10 @@ class _$_LoadSuccess<T, S> extends _LoadSuccess<T, S> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<T> data)? initial,
-    TResult Function(List<T> data, int? itemsPerPage)? loadInProgress,
-    TResult Function(List<T> data, bool isNextPageAvailable)? loadSuccess,
-    TResult Function(List<T> data, S failure)? loadFailure,
+    TResult Function(T data)? initial,
+    TResult Function(T data, int? itemsPerPage)? loadInProgress,
+    TResult Function(T data, bool isNextPageAvailable)? loadSuccess,
+    TResult Function(T data, S failure)? loadFailure,
   }) {
     return loadSuccess?.call(data, isNextPageAvailable);
   }
@@ -545,10 +522,10 @@ class _$_LoadSuccess<T, S> extends _LoadSuccess<T, S> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<T> data)? initial,
-    TResult Function(List<T> data, int? itemsPerPage)? loadInProgress,
-    TResult Function(List<T> data, bool isNextPageAvailable)? loadSuccess,
-    TResult Function(List<T> data, S failure)? loadFailure,
+    TResult Function(T data)? initial,
+    TResult Function(T data, int? itemsPerPage)? loadInProgress,
+    TResult Function(T data, bool isNextPageAvailable)? loadSuccess,
+    TResult Function(T data, S failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -596,12 +573,12 @@ class _$_LoadSuccess<T, S> extends _LoadSuccess<T, S> {
 }
 
 abstract class _LoadSuccess<T, S> extends BaseState<T, S> {
-  const factory _LoadSuccess(final List<T> data,
-      {final bool isNextPageAvailable}) = _$_LoadSuccess<T, S>;
+  const factory _LoadSuccess(final T data, {final bool isNextPageAvailable}) =
+      _$_LoadSuccess<T, S>;
   const _LoadSuccess._() : super._();
 
   @override
-  List<T> get data;
+  T get data;
   bool get isNextPageAvailable;
   @override
   @JsonKey(ignore: true)
@@ -616,7 +593,7 @@ abstract class _$$_LoadFailureCopyWith<T, S, $Res>
           $Res Function(_$_LoadFailure<T, S>) then) =
       __$$_LoadFailureCopyWithImpl<T, S, $Res>;
   @override
-  $Res call({List<T> data, S failure});
+  $Res call({T data, S failure});
 }
 
 /// @nodoc
@@ -637,9 +614,9 @@ class __$$_LoadFailureCopyWithImpl<T, S, $Res>
   }) {
     return _then(_$_LoadFailure<T, S>(
       data == freezed
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<T>,
+              as T,
       failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -651,17 +628,10 @@ class __$$_LoadFailureCopyWithImpl<T, S, $Res>
 /// @nodoc
 
 class _$_LoadFailure<T, S> extends _LoadFailure<T, S> {
-  const _$_LoadFailure(final List<T> data, this.failure)
-      : _data = data,
-        super._();
+  const _$_LoadFailure(this.data, this.failure) : super._();
 
-  final List<T> _data;
   @override
-  List<T> get data {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
-
+  final T data;
   @override
   final S failure;
 
@@ -675,14 +645,14 @@ class _$_LoadFailure<T, S> extends _LoadFailure<T, S> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LoadFailure<T, S> &&
-            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other.data, data) &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_data),
+      const DeepCollectionEquality().hash(data),
       const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
@@ -694,11 +664,10 @@ class _$_LoadFailure<T, S> extends _LoadFailure<T, S> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<T> data) initial,
-    required TResult Function(List<T> data, int? itemsPerPage) loadInProgress,
-    required TResult Function(List<T> data, bool isNextPageAvailable)
-        loadSuccess,
-    required TResult Function(List<T> data, S failure) loadFailure,
+    required TResult Function(T data) initial,
+    required TResult Function(T data, int? itemsPerPage) loadInProgress,
+    required TResult Function(T data, bool isNextPageAvailable) loadSuccess,
+    required TResult Function(T data, S failure) loadFailure,
   }) {
     return loadFailure(data, failure);
   }
@@ -706,10 +675,10 @@ class _$_LoadFailure<T, S> extends _LoadFailure<T, S> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<T> data)? initial,
-    TResult Function(List<T> data, int? itemsPerPage)? loadInProgress,
-    TResult Function(List<T> data, bool isNextPageAvailable)? loadSuccess,
-    TResult Function(List<T> data, S failure)? loadFailure,
+    TResult Function(T data)? initial,
+    TResult Function(T data, int? itemsPerPage)? loadInProgress,
+    TResult Function(T data, bool isNextPageAvailable)? loadSuccess,
+    TResult Function(T data, S failure)? loadFailure,
   }) {
     return loadFailure?.call(data, failure);
   }
@@ -717,10 +686,10 @@ class _$_LoadFailure<T, S> extends _LoadFailure<T, S> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<T> data)? initial,
-    TResult Function(List<T> data, int? itemsPerPage)? loadInProgress,
-    TResult Function(List<T> data, bool isNextPageAvailable)? loadSuccess,
-    TResult Function(List<T> data, S failure)? loadFailure,
+    TResult Function(T data)? initial,
+    TResult Function(T data, int? itemsPerPage)? loadInProgress,
+    TResult Function(T data, bool isNextPageAvailable)? loadSuccess,
+    TResult Function(T data, S failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
@@ -768,12 +737,12 @@ class _$_LoadFailure<T, S> extends _LoadFailure<T, S> {
 }
 
 abstract class _LoadFailure<T, S> extends BaseState<T, S> {
-  const factory _LoadFailure(final List<T> data, final S failure) =
+  const factory _LoadFailure(final T data, final S failure) =
       _$_LoadFailure<T, S>;
   const _LoadFailure._() : super._();
 
   @override
-  List<T> get data;
+  T get data;
   S get failure;
   @override
   @JsonKey(ignore: true)

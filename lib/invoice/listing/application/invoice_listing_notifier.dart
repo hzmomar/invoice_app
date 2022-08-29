@@ -4,7 +4,7 @@ import 'package:invoice_app/invoice/listing/domain/invoice_listing.dart';
 import 'package:invoice_app/invoice/listing/infrastructure/invoice_listing_repository.dart';
 
 class InvoiceListingNotifier
-    extends StateNotifier<BaseState<InvoiceListingEntity, dynamic>> {
+    extends StateNotifier<BaseState<List<InvoiceListingEntity>, dynamic>> {
   final InvoiceListingRepository _invoiceListingRepository;
 
   InvoiceListingNotifier(this._invoiceListingRepository)
